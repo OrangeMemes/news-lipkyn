@@ -16,7 +16,9 @@ require('init.php')
 
     $news_list = $conn->query("SELECT `title`, `text`, `postingTime` FROM news ORDER BY `postingTime` DESC")->fetch_all(MYSQLI_ASSOC);
     foreach ($news_list as $news_item) {
-        echo '<article>' . '<h2>' . $news_item["title"] . '</h2>' . '<p class="news-text">' . $news_item["text"] . '</p>' . '</article>';
+        $title = htmlspecialchars($news_item["title"]);
+        $text = htmlspecialchars($news_item["text"]);
+        echo '<article>' . '<h2>' . $title . '</h2>' . '<p class="news-text">' . $text . '</p>' . '</article>';
     }
 
     ?>
