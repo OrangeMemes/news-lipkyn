@@ -5,13 +5,15 @@ require('init.php')
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>Новостной портал</title>
 </head>
 <body>
 <header>
+    <p>Новостной портал</p>
     <a href="admin.php">админка</a>
 </header>
-<section class="main">
+<section>
     <?php
 
     $news_list = $conn->query("SELECT `title`, `text` FROM news ORDER BY `postingTime` DESC")->fetch_all(MYSQLI_ASSOC);
