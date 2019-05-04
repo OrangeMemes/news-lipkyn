@@ -29,8 +29,9 @@ header > a:hover {
     background-color: rgba(0, 0, 0, .1);
 }
 
-.admin-entry * {
-    display: inline;
+.admin-entry {
+    display: flex;
+    justify-content: space-between;
 }
 
 .delete-button {
@@ -82,4 +83,18 @@ header > a:hover {
 article {
     border-top: 1px solid black;
     padding: 10px;
+}
+
+.news-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.news-form > * {
+    margin: 10px;
+}
+
+.news-form textarea {
+    resize: none;
 }

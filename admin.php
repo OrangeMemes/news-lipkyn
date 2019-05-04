@@ -39,7 +39,7 @@ require('init.php')
     }
     ?>
 
-    <form method="post">
+    <form method="post" class="news-form">
         <input type="hidden" name="action" value="POST">
         <label for="title">
             Название
@@ -47,7 +47,7 @@ require('init.php')
         </label>
         <label for="text">
             Содержимое
-            <textarea name="text" required></textarea>
+            <textarea name="text" required cols="50" rows="10"></textarea>
         </label>
         <input class="submit-button" type="submit" value="💌"/>
     </form>

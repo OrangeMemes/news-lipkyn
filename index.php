@@ -18,8 +18,8 @@ require('init.php')
 
     $news_list = $conn->query("SELECT `title`, `text` FROM news ORDER BY `postingTime` DESC")->fetch_all(MYSQLI_ASSOC);
     foreach ($news_list as $news_item) {
-        $title = htmlspecialchars($news_item["title"]);
-        $text = htmlspecialchars($news_item["text"]);
+        $title = nl2br(htmlspecialchars($news_item["title"]));
+        $text = nl2br(htmlspecialchars($news_item["text"]));
         echo '<article>' . '<h2>' . $title . '</h2>' . '<p class="news-text">' . $text . '</p>' . '</article>';
     }
 
